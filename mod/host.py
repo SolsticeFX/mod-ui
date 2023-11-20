@@ -316,7 +316,7 @@ class Host(object):
         self.prefs = prefs
         self.msg_callback = msg_callback
 
-        self.addr = ("localhost", 5555)
+        self.addr = ("localhost", DEVICE_HOST_PORT)
         self.readsock = None
         self.writesock = None
         self.crashed = False
