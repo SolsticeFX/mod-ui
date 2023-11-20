@@ -21,9 +21,15 @@ from datetime import timedelta
 from random import randint
 from tornado import gen, iostream
 from tornado.ioloop import IOLoop, PeriodicCallback
-from PIL import Image
+#from urllib.parse import quote, unquote
 import os, json, socket, time, logging
 import shutil
+
+# only used for HMI screenshots, optional
+try:
+    from PIL import Image
+except ImportError:
+    pass
 
 from mod import (
     TextFileFlusher,
@@ -124,7 +130,7 @@ from mod.protocol import (
     Protocol, ProtocolError, process_resp,
 )
 from mod.settings import (
-    APP, LOG, DEFAULT_PEDALBOARD,
+    APP, LOG, DEFAULT_PEDALBOARD, DEVICE_HOST_PORT
     DATA_DIR, PRESETS_DIR, LV2_PEDALBOARDS_DIR, LV2_FACTORY_PEDALBOARDS_DIR, USER_FILES_DIR,
     PEDALBOARD_INSTANCE, PEDALBOARD_INSTANCE_ID, PEDALBOARD_URI, PEDALBOARD_TMP_DIR,
     TUNER_URI, TUNER_INSTANCE_ID, TUNER_INPUT_PORT, TUNER_MONITOR_PORT, HMI_TIMEOUT, MODEL_TYPE,
