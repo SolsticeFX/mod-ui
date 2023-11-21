@@ -191,14 +191,15 @@ $('document').ready(function() {
     } else {
         desktop.upgradeWindow.upgradeWindow('setErrored')
 	// hide stuff that is only relevant to MOD Devices
-        //$('#mod-bypassLeft').hide()
-        //$('#mod-bypassRight').hide()
-        //$('#mod-update').hide()
-        //$('#pedalboard-info').find('.js-cloud').hide()
+        $('#mod-bypassLeft').hide()
+        $('#mod-bypassRight').hide()
+        $('#mod-update').hide()
+        $('#pedalboard-info').find('.js-cloud').hide()
 
         // show other stuff to make it less empty
         $('#mod-xruns').show()
         $('#mod-status').show().statusTooltip('updatePosition')
+	$('#mod-cpu-stats').show()    
     }
 
     if ({{blokas_enabled}}) {
@@ -267,13 +268,13 @@ $('document').ready(function() {
             })
         }
 
-        //$('#mod-devices').hide()
-        //$('#mod-online-pedalboards').hide()
-        //$('#mod-cloud-plugins').hide()
+        $('#mod-devices').hide()
+        $('#mod-online-pedalboards').hide()
+        $('#mod-cloud-plugins').hide()
         //$('#mod-settings').hide()
        // $('#mod-status').hide()
-       // $('#mod-update').hide()
-       // $('#blokas-update').hide()
+        $('#mod-update').hide()
+        $('#blokas-update').hide()
         $('#blokas-update').statusTooltip()
         $('#blokas-update').statusTooltip('message', 'Check for Updates', true)
         $('#blokas-update').click(function () {
