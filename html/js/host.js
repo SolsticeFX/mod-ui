@@ -153,7 +153,7 @@ $('document').ready(function() {
             var instance = data[0]
             var x = parseInt(data[1])
             var y = parseInt(data[2])
-            desktop.pedalboard.pedalboard("setPluginPosition", instance, x, y)
+            desktop.pedalboard.pedalboard("setPluginPosition", instance, Math.round(x/100)*100, Math.round(num/100)*100)
             return
         }
 
@@ -376,7 +376,7 @@ $('document').ready(function() {
                             $('#pedalboard-dashboard').arrive(instancekey, cb)
                         }
 
-                        desktop.pedalboard.pedalboard("addPlugin", pluginData, instance, bypassed, x, y, {}, null, skipModified)
+                        desktop.pedalboard.pedalboard("addPlugin", pluginData, instance, bypassed, Math.round(x/100)*100, Math.round(y/100)*100, {}, null, skipModified)
                     },
                     cache: offBuild,
                     dataType: 'json'
