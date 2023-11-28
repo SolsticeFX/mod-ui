@@ -1047,10 +1047,12 @@ function Desktop(elements) {
     })
     elements.bufferSizeButton.click(function () {
         var newsize
-        if ($(this).text() == "128 frames") {
+        if ($(this).text() == "64 frames") {
+            newsize = '128'
+        } else if ($(this).text() == "128 frames"){
             newsize = '256'
         } else {
-            newsize = '128'
+            newsize = '64' 
         }
 
         $.ajax({
